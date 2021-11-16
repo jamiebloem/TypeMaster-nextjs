@@ -17,3 +17,15 @@ This is a self-built app in Next.js. I started with a HTML/CSS project challenge
 - Next.js
 - Figma
 - Contentful
+
+## Screenshots of the design
+Make it clear what I was trying to make it look like. Here are some screenshots of the original design:
+
+### Desktop
+![desktop](./public/static/assets/github/desktop.jpg)
+
+### Tablet
+![tablet](./public/static/assets/github/tablet.jpg)
+
+### Mobile
+![mobile](./public/static/assets/github/mobile.jpg)
