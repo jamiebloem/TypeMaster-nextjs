@@ -1,4 +1,5 @@
 import Button from "../atom/Button";
+import Link from 'next/link';
 
 export default function HeadingCta() {
     return (
@@ -58,7 +59,6 @@ export default function HeadingCta() {
                     margin-top: 60px;
                     margin-bottom: 24px;
                   }
-
                 }
               }
             `}</style>
@@ -66,7 +66,12 @@ export default function HeadingCta() {
 
             <p className="heading-cta__intro"> Improve your productivity and gaming without breaking the bank.
                 Upgrade to a high quality
-                mechanical typing experience.</p>
+                mechanical typing experience.
+                <br/>
+                <br/>
+
+                Lets do a <Link href="/typinggame"><a>typing game</a></Link> to feel if your keyboard is comfy enough!
+            </p>
 
             <div className="cta">
                 <Button variant="button--orange">Pre order now</Button>
