@@ -16,18 +16,41 @@ function TypingGame() {
     }, [])
 
     useEffect(() => {
+
+        const ignoredKeys = ['Enter', 'Alt', 'Shift', 'Control'];
         window.addEventListener('keydown', (event) => {
-                setUserInput((previousUserInput) => previousUserInput + event.key
+                if (ignoredKeys.includes(event.key)) {
+                    return
+                }
+                if (event.key === 'Backspace') {
+                    return setUserInput((previousUserInput) => {
+                        return previousUserInput.slice(0, -1);
+                    })
+                }
+                setUserInput((previousUserInput) => {
+                        return previousUserInput + event.key
+                    }
                 )
             }
         )
     }, [])
-    console.log('input', userInput)
-    console.log('words', words)
-    return <div>
-        <p>{words[currentWordIndex]}</p>
-        <p> {userInput} </p>
-        <p>{words[currentWordIndex] === userInput && 'Good job!'}</p>
+    return <div className="game">
+        <style jsx>{`
+          .game {
+            background-color: var(--color-primary);
+            border-radius: 10px;
+            width: 50%;
+            margin: 50px;
+            padding: 50px;
+            color: white;
+          }
+        `}</style>
+        <div class="game-input">
+            <h1>Typing game</h1>
+            <p>{words[currentWordIndex]}</p>
+            <p>{userInput}</p>
+            <p>{words[currentWordIndex] === userInput && 'Good job!'}</p>
+        </div>
     </div>
 }
 
