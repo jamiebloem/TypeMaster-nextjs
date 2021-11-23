@@ -34,6 +34,13 @@ function TypingGame() {
             }
         )
     }, [])
+
+    useEffect(() => {
+        if (words[currentWordIndex] === userInput) {
+            setCurrentWordIndex(currentWordIndex + 1)
+            setUserInput('')
+        }
+    }, [words[currentWordIndex] === userInput])
     return <div className="game">
         <style jsx>{`
           .game {
@@ -45,11 +52,11 @@ function TypingGame() {
             color: white;
           }
         `}</style>
-        <div class="game-input">
+        <div className="game-input">
             <h1>Typing game</h1>
             <p>{words[currentWordIndex]}</p>
             <p>{userInput}</p>
-            <p>{words[currentWordIndex] === userInput && 'Good job!'}</p>
+            <p>{currentWordIndex === words.length  &&  'Good job!'}</p>
         </div>
     </div>
 }
