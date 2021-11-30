@@ -6,7 +6,6 @@ import {createClient} from 'contentful';
 import Footer from "../atom/Footer";
 
 
-
 export async function getStaticProps() {
 
     const client = createClient({
@@ -38,9 +37,10 @@ export default function About(props) {
                 <title>Frontend Mentor | Typemaster pre-launch landing page</title>
             </Head>
             <LogoHeading/>
-                        <Heading/>
+            <Heading/>
             <Usp usps={props.usps}/>
             <Footer/>
         </>
     )
-}
+};
+
